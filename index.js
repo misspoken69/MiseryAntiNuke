@@ -22,3 +22,4 @@ antinuke.on("ready", async () => {
   console.log("[-] If you like it, maybe leave a star and follow?")
   console.log("[-] It would help a lot considering I am making more!")
   console.log("[-] This was made by Misspoken so don't skid this shit.")
+})
