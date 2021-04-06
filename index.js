@@ -1,5 +1,6 @@
 // Made by Misspoken#1122. Don't skid this shit. :)
 
+// Dependencies 
 const Discord = require('discord.js'); 
 const antinuke = new Discord.Client(); 
 const fs = require('fs'); 
@@ -9,6 +10,7 @@ const config = require('./config.json');
 const prefix = 'm!';
 const keepAlive = require('./server.js');
 
+// Logs
 antinuke.on("ready", async () => {
     console.clear();
   console.log("███╗░░░███╗██╗░██████╗███████╗██████╗░██╗░░░██╗")
@@ -22,5 +24,22 @@ antinuke.on("ready", async () => {
   console.log("[-] If you like it, maybe leave a star and follow?")
   console.log("[-] It would help a lot considering I am making more!")
   console.log("[-] This was made by Misspoken so don't skid this shit.")
+  console.log("———————————————————————————————————————————————")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
+  console.log("Fear Misspoken ©️")
 })
-
