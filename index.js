@@ -63,3 +63,12 @@ antinuke.on('message', async msg => {
   .then(sentMessage => sentMessage.react('822307172229840926'))
   .catch(console.error)
   console.log(clc.red(`Turned on Anti-Nuke in ${msg.guild.name}`))
+
+// Turning off Anti-Nuke
+}
+  
+if (msg.content === prefix + 'antinukeoff'){
+   msg.channel.send('Turning off Misery Anti-Nuke and leaving the server..');
+   console.log(clc.green(`Left ${msg.guild.name}!`));
+   msg.guild.leave();
+}
