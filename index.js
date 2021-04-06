@@ -117,3 +117,92 @@ antinuke.on('guildMemberAdd', async member => {
         }
     } 
 });
+
+
+// Suspicions Of Banning Members
+antinuke.on('guildBanAdd', async guild => {
+    guild.fetchAuditLogs({type:22}).then(audit => {
+        const executor = audit.entries.first().executor;
+        let member = guild.members.get(executor.id);
+        if (executor.id === antinuke.user.id) return;
+        if (executor.id === channel.guild.ownerID) return;
+        if (!config.whitelist || !config.bypass || !config.owner); {
+            member.ban({reason:"Manually banned people. Banning is a big part of nuking."});
+            const embed = new Discord.MessageEmbed()
+            .setTitle('𝘈𝘛𝘛𝘌𝘔𝘗𝘛𝘌𝘋 𝘕𝘜𝘒𝘌 🤡')
+                .setURL('https://github.com/misspoken')
+                .setColor(000000)
+                .setAuthor('Misery protected your server!', antinuke.user.avatarURL)
+                .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
+                .setDescription(`**Suspected Wizzer:** ${executor.username}#${executor.discriminator}\n**Action Taken:** Banned user and removed admin.\n**Protocol:** Restore admin and unban user.`);
+                antinuke.users.get(guild.ownerID).send(embed);
+            const exembedd = new Discord.MessageEmbed()
+            .setTitle('𝘠𝘖𝘜 𝘞𝘌𝘙𝘌 𝘉𝘈𝘕𝘕𝘌𝘋')
+            .setURL('https://github.com/misspoken69/')
+            .setColor(000000)
+            .setAuthor('Misery banned you!', antinuke.user.avatarURL)
+            .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
+            .setDescription(`**Your admin was removed in ${guild.name}~\n__Reason:__ Manually banning users\nThis message was sent to you because you were the one who banned a user.**`);
+            antinuke.users.get(executor.id).send(exembedd);
+            console.log(clc.red(`Banned ${member.user.tag}, user was banning people!`)), function (err, res) {
+                if (err)
+                console.log(err);
+                const errembed = new Discord.MessageEmbed()
+                .setTitle('️⚠️')
+                .setURL('https://github.com/misspoken69/')
+                .setColor(000000)
+                .setAuthor('Error Log:', antinuke.user.avatarURL)
+                .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
+                .setDescription('An Error Has Occured While Trying To Protect Your Server..\nError: ' + (err) + '\nSuggestion: Give the bot the highest role in the server and turn on the Anti-Nuke with "' + prefix + ' antinuke"!\n-Misery Anti-Nuke')
+                antinuke.users.get(channel.guild.ownerID).send(errembed)
+            }
+
+        
+        }
+    
+    })
+    
+
+});
+
+// Suspicions Of Channel Deletion
+antinuke.on('channelDelete', async (channel) => {
+    channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'}).then(audit => {
+        const executor = audit.entries.first().executor;
+        let adminRole = channel.guild.roles.find(r => r.hasPermission('ADMINISTRATOR' || 'MANAGE_CHANNELS'))
+        if (adminRole.name === antinuke.user.username) return;
+        if (executor.id === antinuke.user.id) return;
+        if (executor.id === channel.guild.ownerID) return;
+        let member = channel.guild.members.get(executor.id)
+        member.removeRole(adminRole.id)
+        if (!config.whitelist || !config.bypass || !config.owner); {
+            const embed = new Discord.MessageEmbed()
+            .setTitle('𝘊𝘏𝘈𝘕𝘕𝘌𝘓 𝘋𝘌𝘓𝘌𝘛𝘌𝘋')
+            .setURL('https://github.com/misspoken')
+            .setColor(000000)
+            .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
+            .setAuthor('Misery protected your server!', antinuke.user.avatarURL)
+            .setDescription(`**Channel Deleter:** ${executor.username}#${executor.discriminator}\n**Action Taken:** Removed admin\n**Protocol:** Restore admin`)
+            antinuke.users.get(channel.guild.ownerID).send(embed)
+            const exembed = new Discord.MessageEmbed()
+            .setTitle('𝘓𝘐𝘔𝘐𝘛 𝘞𝘈𝘚 𝘙𝘌𝘈𝘊𝘏𝘌𝘋')
+            .setColor(000000)
+            .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
+            .setAuthor('Misery took away your admin.', antinuke.user.avatarURL)
+            .setDescription(`**Your admin was removed in ${channel.guild.name}!\n__Reason:__ Channel deletion\nThis message was sent to you because you were the one who deleted a channel.**`)
+            antinuke.users.get(member.id).send(exembed)
+            console.log(clc.red(`Removed admin for ${member.user.tag}, deleted channels!`)), function (err, res) {
+                if (err)
+                console.log(err)
+                const errembed = new Discord.MessageEmbed()
+                .setTitle('⚠️')
+                .setColor(000000)
+                .setAuthor('Error Log:', antinuke.user.avatarURL)
+                .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
+                .setDescription('An Error Has Occured While Trying To Protect Your Server..\nError: ' + (err) + '\nSuggestions: Give the bot the highest role in the server and turn on the Anti-Nuke with "' + prefix + ' antinuke"!\n-Misery Anti-Nuke')
+                antinuke.users.get(channel.guild.ownerID).send(errembed)
+            }
+
+        }
+    })
+});
