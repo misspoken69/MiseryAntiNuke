@@ -88,3 +88,32 @@ if (msg.content === prefix + 'help'){
   msg.channel.send(helpembed);
 }
 });
+
+
+// Suspicions For Adding Bots
+antinuke.on('guildMemberAdd', async member => {
+    const executor = audit.entries.first().executor;
+    if (executor.id === antinuke.user.id) return;
+    if (executor.id === channel.guild.ownerID) return;
+    if (member.user.bot && config.blacklist) {
+        (member.ban("Suspicious bot was added to the server! Was not whitelisted or was blacklisted."));
+        const embed = new Discord.MessageEmbed()
+        .setTitle('𝘉𝘖𝘛 𝘈𝘋𝘋𝘌𝘋')
+                .setColor(000000)
+                .setAuthor('Misery protected your server!', antinuke.user.avatarURL)
+                .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe.', antinuke.user.avatarURL)
+                .setDescription(`**Bot Added:** ${member.displayName}#${member.discriminator}\n**Action Taken:** Banned Bot\n**Protocol:** Re-invite the Bot`)
+                antinuke.users.get(member.guild.ownerID).send(embed)
+        (console.log(clc.red(`Unwhitelisted bot has been banned, ${member.user.tag}!`))), function (err, res) {
+            if (err)
+            console.log(err)
+            const errembed = new Discord.MessageEmbed()
+            .setTitle('⚠️')
+            .setColor(000000)
+            .setAuthor('Error Log:', antinuke.user.avatarURL)
+            .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
+            .setDescription('An error has occured while trying to protect your server..\nError: ' + (err) + '\nSuggestions: Give the bot the highest role in the server and turn on the Anti-Nuke with "' + prefix + ' antinuke"!\n-Misery Anti-Nuke')
+            antinuke.users.get(member.guild.ownerID).send(errembed)
+        }
+    } 
+});
