@@ -11,8 +11,6 @@ Protect your server from deadly nukes on Discord.
 |                |                        |
 | -------------- | ---------------------- |
 | `m!help`       | See the help menu.     |
-| -------------- | ---------------------- |
 | `m!antinukeon` | Turn on the anti-nuke. |
-| -------------- | ---------------------- |
 | `m!antinukeoff`| Turn off the anti-nuke.|
 | -------------- | ---------------------- |
