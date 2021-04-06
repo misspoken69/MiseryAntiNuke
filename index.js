@@ -1,3 +1,5 @@
+// Made by Misspoken#1122. Don't skid this shit. :)
+
 const Discord = require('discord.js'); 
 const antinuke = new Discord.Client(); 
 const fs = require('fs'); 
@@ -6,8 +8,6 @@ const clc = require('cli-color');
 const config = require('./config.json'); 
 const prefix = 'm!';
 const keepAlive = require('./server.js');
-
-// Made by Misspoken#1122. Don't skid this shit. :)
 
 antinuke.on("ready", async () => {
     console.clear();
@@ -23,3 +23,4 @@ antinuke.on("ready", async () => {
   console.log("[-] It would help a lot considering I am making more!")
   console.log("[-] This was made by Misspoken so don't skid this shit.")
 })
+
