@@ -72,3 +72,19 @@ if (msg.content === prefix + 'antinukeoff'){
    console.log(clc.green(`Left ${msg.guild.name}!`));
    msg.guild.leave();
 }
+
+// Help Command
+if (msg.content === prefix + 'help'){
+   const helpembed = new Discord.MessageEmbed()
+   .setTitle('𝘔𝘐𝘚𝘌𝘙𝘠 𝘏𝘌𝘓𝘗 𝘗𝘈𝘕𝘌𝘓')
+   .setTimestamp()
+   
+  .setColor(000000)
+  .setImage('https://cdn.discordapp.com/attachments/820160962946007040/828727269094457434/giphy_3.gif')
+  .setAuthor('𝘔𝘐𝘚𝘌𝘙𝘠 𝘎𝘓𝘖𝘉𝘈𝘓', 'https://cdn.discordapp.com/attachments/828654164589543484/828706460397076480/Untitled_8.png')
+  .setFooter('Misery Anti-Nuke | By Misspoken | Prefix: ' + prefix, 'https://cdn.discordapp.com/attachments/828654164589543484/828706460397076480/Untitled_8.png')
+  .addField(prefix + 'antinukeon', 'Turns on Anti-Nuke to protect your server from getting wizzed!')
+  .addField(prefix + 'antinukeoff', 'Turns off Anti-Nuke by leaving your server!')
+  msg.channel.send(helpembed);
+}
+});
