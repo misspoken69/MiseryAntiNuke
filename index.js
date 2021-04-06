@@ -253,3 +253,7 @@ antinuke.on('channelCreate', async (channel) => {
     })
    
 })
+
+// Bot Configuration
+keepAlive();
+antinuke.login(config.token);
