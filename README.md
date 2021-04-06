@@ -8,6 +8,7 @@ Protect your server from deadly nukes on Discord.
 - In the server do `m!antinukeon` and anti-nuke will completely be on.
 
 ## Commands
+|                |                        |
 | -------------- | ---------------------- |
 | `m!help`       | See the help menu.     |
 | `m!antinukeon` | Turn on the anti-nuke. |
