@@ -13,3 +13,6 @@ Protect your server from deadly nukes on Discord.
 | `m!help`       | See the help menu.     |
 | `m!antinukeon` | Turn on the anti-nuke. |
 | `m!antinukeoff`| Turn off the anti-nuke.|
+
+## Help/Credits
+- This was made by Misspoken#1122 (me) so if you need help, message me on Discord! This took like 37 hours to make so don't skid lmaoo
