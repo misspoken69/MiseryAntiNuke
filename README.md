@@ -21,5 +21,8 @@ Protect your server from deadly nukes on Discord.
 
 ## Preview
 
+![preview](https://raw.githubusercontent.com/misspoken69/MiseryAntiNuke/main/Terminal.png)
+
+
 ## Help/Credits
 This was made by Misspoken#1122 (me) so if you need help, message me on Discord! This took like 37 hours to make so don't skid
