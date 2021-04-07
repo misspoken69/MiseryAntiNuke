@@ -22,6 +22,8 @@ Protect your server from deadly nukes on Discord.
 ## Preview
 
 ![preview](https://raw.githubusercontent.com/misspoken69/MiseryAntiNuke/main/Terminal.png)
+---------
+![preview](https://raw.githubusercontent.com/misspoken69/MiseryAntiNuke/main/Embed.png)
 
 
 ## Help/Credits
