@@ -1,6 +1,11 @@
 # Misery Anti-Nuke Discord Bot
 Protect your server from deadly nukes on Discord.
 
+## Table of Contents
+- [Usage](https://github.com/misspoken69/MiseryAntiNuke#Usage)
+- [Commands](https://github.com/misspoken69/MiseryAntiNuke#Commands)
+- [Help & Credits](https://github.com/misspoken69/MiseryAntiNuke#HelpCredits)
+
 ## Usage
 - Download the project or import it to [Repl.it](https://replit.com/).
 - Head over to `config.json` and fill everything out. (Keep the quotation marks.)
