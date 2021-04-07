@@ -13,6 +13,7 @@ const keepAlive = require('./server.js');
 // Logs
 antinuke.on("ready", async () => {
     console.clear();
+  console.log("———————————————————————————————————————————————")
   console.log("███╗░░░███╗██╗░██████╗███████╗██████╗░██╗░░░██╗")
   console.log("████╗░████║██║██╔════╝██╔════╝██╔══██╗╚██╗░██╔╝")
   console.log("██╔████╔██║██║╚█████╗░█████╗░░██████╔╝░╚████╔╝░")
@@ -25,23 +26,6 @@ antinuke.on("ready", async () => {
   console.log("[-] It would help a lot considering I am making more!")
   console.log("[-] This was made by Misspoken so don't skid this shit.")
   console.log("———————————————————————————————————————————————")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
-  console.log("Fear Misspoken ©️")
 })
 
 // Turning on Anti-Nuke
