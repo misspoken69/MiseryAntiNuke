@@ -11,7 +11,9 @@ Protect your server from deadly nukes on Discord.
 ## Versions
 - 4/4/21 - Version 1.0.0
   - Had errors, bugs, typos.
-- 4/7/21 - Version 1.0.1
+- 4/5/21 - Version 1.0.1
+  - Recoded everything.. still had errors.
+- 4/7/21 - Version 1.0.2
   - Latest version! Recoded and brand new.
 
 ## Usage
