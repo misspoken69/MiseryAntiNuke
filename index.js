@@ -47,7 +47,7 @@ antinuke.on('message', async msg => {
 })
 
 // Help Command | RECODED!
-antinuke.on('message', aysnc msg => {
+antinuke.on('message', async msg => {
   if (msg.content === prefix + 'help'){
     
 
