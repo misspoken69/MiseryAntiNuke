@@ -47,6 +47,24 @@ antinuke.on('message', async msg => {
   }
 })
 
+// Help Command | RECODED!
+antinuke.on('message', aysnc msg => {
+  if (msg.content === prefix + 'help'){
+    
+
+  const helpembed = new Discord.MessageEmbed()
+  .setTitle('𝘔𝘐𝘚𝘌𝘙𝘠 𝘏𝘌𝘓𝘗 𝘗𝘈𝘕𝘌𝘓')
+  .setTimestamp()
+  .setColor(000000)
+  .setImage('https://cdn.discordapp.com/attachments/790266937808257074/826516543453265920/image0.gif')
+  .setFooter('𝘔𝘐𝘚𝘌𝘙𝘠 𝘎𝘓𝘖𝘉𝘈𝘓', 'https://cdn.discordapp.com/attachments/828654164589543484/828706460397076480/Untitled_8.png')
+  .addField('Anti-Nuke <:xFire:829501427697188894>', 'm!help anti', true)
+  .addField('Utility <:xTools:829500424537112608>', 'm!help util', true)
+  .addField('Moderation <:xBan:829500910022688809>', 'm!help mod [BETA]', true)
+  msg.channel.send(helpembed)
+  }
+})
+
 // Turning on Anti-Nuke
 antinuke.on('message', async msg => {
   if (msg.content === prefix + 'antinukeon'){
@@ -75,23 +93,6 @@ if (msg.content === prefix + 'antinukeoff'){
    console.log(clc.green(`Left ${msg.guild.name}!`));
    msg.guild.leave();
 }
-
-// Help Command
-if (msg.content === prefix + 'help'){
-     const helpembed = new Discord.MessageEmbed()
-    .setTitle('𝘔𝘐𝘚𝘌𝘙𝘠 𝘏𝘌𝘓𝘗 𝘗𝘈𝘕𝘌𝘓・Prefix: m!')
-    .setTimestamp()
-    .setColor(000000)
-    .setImage('https://cdn.discordapp.com/attachments/820160962946007040/828727269094457434/giphy_3.gif')
-    .setFooter('𝘔𝘐𝘚𝘌𝘙𝘠 𝘎𝘓𝘖𝘉𝘈𝘓', 'https://cdn.discordapp.com/attachments/828654164589543484/828706460397076480/Untitled_8.png')
-    .addField(prefix + 'help', 'Displays all the commands of Misery Anti-Nuke!')
-    .addField(prefix + 'info', 'Shows all information needed to know before using this.')
-    .addField(prefix + 'antinukeoff', 'Turns off Anti-Nuke by leaving your server!')
-    .addField(prefix + 'antinukeon', 'Turns on Anti-Nuke to protect your server from getting wizzed!')
-    msg.channel.send(helpembed);
- }
-});
-
 
 // Suspicions For Adding Bots
 antinuke.on('guildMemberAdd', async member => {
