@@ -111,7 +111,19 @@ antinuke.on('message', async msg => {
   }
 })
 
-a-a-a-a-a
+// Help Anti-Nuke | RECODED!
+antinuke.on('message', async msg => {
+  if (msg.content === prefix + 'help anti'){
+
+
+  const nukebed = new Discord.MessageEmbed()
+  .setDescription('**m!antinukeon** - Turn on anti-nuke to protect your server.\n**m!antinukeoff** - Turns off anti-nuke by leaving your server.')
+  .setColor(000000)
+  .setTimestamp()
+  .setFooter('@Misspoken69')
+  msg.channel.send(nukebed)
+  }
+})
 
 // Suspicions For Adding Bots
 antinuke.on('guildMemberAdd', async member => {
