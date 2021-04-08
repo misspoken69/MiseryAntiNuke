@@ -2,10 +2,17 @@
 Protect your server from deadly nukes on Discord.
 
 ## Table of Contents
+- [Versions](https://github.com/misspoken69/MiseryAntiNuke#Versions)
 - [Usage](https://github.com/misspoken69/MiseryAntiNuke#Usage)
 - [Commands](https://github.com/misspoken69/MiseryAntiNuke#Commands)
 - [Help & Credits](https://github.com/misspoken69/MiseryAntiNuke#HelpCredits)
 - [Preview](https://github.com/misspoken69/MiseryAntiNuke#Preview)
+
+## Versions
+- 4/4/21 - Version 1.0.0
+  - Had errors, bugs, typos.
+- 4/7/21 - Version 1.0.1
+  - Latest version! Recoded and brand new.
 
 ## Usage
 - Download the project or import it to [Repl.it](https://replit.com/).
