@@ -28,22 +28,23 @@ antinuke.on("ready", async () => {
   console.log("———————————————————————————————————————————————")
 })
 
-// Info Command
+// Info Command | RECODED!
 antinuke.on('message', async msg => {
-    if (msg.content === prefix + 'info'){
+  if (msg.content === prefix + 'info'){
 
 
-    const infoembed = new Discord.MessageEmbed()
-    .setTitle('𝘔𝘐𝘚𝘌𝘙𝘠 𝘈𝘕𝘛𝘐-𝘕𝘜𝘒𝘌 𝘐𝘕𝘍𝘖')
-    .setTimestamp()
-    .setColor(000000)
-    .addField('Developer', 'This was made by Misspoken. If you need help with the source code message me on Discord! :)', true)
-    .addField('Commands', 'm!info\nm!help\nm!antinukeon\nm!antinukeoff')
-    .setImage('https://cdn.discordapp.com/attachments/817447136585056307/829479480858116116/image0.gif')
-    .setDescription('Misery Anti-Nuke is an all new configurable server protecting bot! Published on April 5th, 2021, and still an ongoing project with new commands and tests everyday.\n\nIf you want to use the source code of this bot, click [here](https://github.com/misspoken69/MiseryAntiNuke).')
-    msg.channel.send(infoembed)
-    console.log(clc.red(`Info command used in ${msg.guild.name}`))
-    }
+  const infoembed = new Discord.MessageEmbed()
+  .setTitle('𝘔𝘐𝘚𝘌𝘙𝘠 𝘈𝘕𝘛𝘐-𝘕𝘜𝘒𝘌 𝘐𝘕𝘍𝘖')
+  .setTimestamp()
+  .setColor(000000)
+  .addField('Developer', 'This was made by Misspoken. If you need help with the source code message me on Discord! :)', true)
+  .addField('Commands', 'm!info\nm!help\nm!antinukeon\nm!antinukeoff')
+  .setImage('https://cdn.discordapp.com/attachments/817447136585056307/829479480858116116/image0.gif')
+  .setDescription('Misery Anti-Nuke is an all new configurable server protecting bot! Published on April 5th, 2021, and still an ongoing project with new commands and tests everyday.\n\nIf you want to use the source code of this bot, click [here](https://github.com/misspoken69/MiseryAntiNuke).')
+  .setFooter('Follow me on GitHub: @Misspoken69', 'https://cdn.discordapp.com/avatars/822878967027073105/ba2e9f916f6765f1b7ae922a7b7f2fe1.png?size=1024')
+  msg.channel.send(infoembed)
+  console.log(clc.red(`Info command used in ${msg.guild.name}`))
+  }
 })
 
 // Turning on Anti-Nuke
