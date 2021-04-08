@@ -95,6 +95,24 @@ antinuke.on('message', async msg => {
   }
 })
 
+// BELOW ARE ALL THE CATEGORIES FOR HELP COMMAND!
+// ------------------------------------------------------------------------------------------
+// Help Utility | RECODED!
+antinuke.on('message', async msg => {
+  if (msg.content === prefix + 'help util'){
+
+
+  const uembed = new Discord.MessageEmbed()
+  .setDescription('**m!info** - Useful information to know when using this bot.\n**m!help** - Displays the aliases for the category help embeds.')
+  .setColor(000000)
+  .setTimestamp()
+  .setFooter('@Misspoken69')
+  msg.channel.send(uembed)
+  }
+})
+
+a-a-a-a-a
+
 // Suspicions For Adding Bots
 antinuke.on('guildMemberAdd', async member => {
     const executor = audit.entries.first().executor;
