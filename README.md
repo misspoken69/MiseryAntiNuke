@@ -33,4 +33,5 @@ Protect your server from deadly nukes on Discord.
 This was made by Misspoken#1122 (me) so if you need help, message me on Discord! This took like 37 hours to make so don't skid
 
 ## Preview
-![preview](https://cdn.discordapp.com/attachments/818542737808293930/829488795698462730/Misery.png)
+![preview](https://cdn.discordapp.com/attachments/818542759555104818/829583974631342090/MiseryTT.png)
+![preview](https://cdn.discordapp.com/attachments/818542759555104818/829583979422023690/MiserySS.png)
