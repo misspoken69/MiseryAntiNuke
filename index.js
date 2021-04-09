@@ -72,7 +72,6 @@ antinuke.on('message', async msg => {
   .setFooter('𝘔𝘐𝘚𝘌𝘙𝘠 𝘎𝘓𝘖𝘉𝘈𝘓', 'https://cdn.discordapp.com/attachments/828654164589543484/828706460397076480/Untitled_8.png')
   .addField('Anti-Nuke <:xFire:829501427697188894>', 'm!help anti', true)
   .addField('Utility <:xTools:829500424537112608>', 'm!help util', true)
-  .addField('Moderation <:xBan:829500910022688809>', 'm!help mod [BETA]', true)
   msg.channel.send(helpembed)
   }
 })
