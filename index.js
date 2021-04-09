@@ -27,6 +27,19 @@ antinuke.on("ready", async () => {
   console.log("———————————————————————————————————————————————")
 })
 
+// Source Command | RECODED!
+antinuke.on('message', async msg => {
+  if (msg.content === prefix + 'invite'){
+
+
+  const invbed = new Discord.MessageEmbed()
+  .setDescription('Use the Misery anti-nuke system by clicking [here](https://github.com/misspoken69/MiseryAntiNuke) and leave a follow! <a:xVerified:830116875740250113>')
+  .setImage('https://cdn.discordapp.com/attachments/818542759555104818/830116144480256030/image0_1.gif')
+  .setColor(000000)
+  msg.channel.send(invbed).then(res => message.delete())
+  }
+})
+
 // Info Command | RECODED!
 antinuke.on('message', async msg => {
   if (msg.content === prefix + 'info'){
