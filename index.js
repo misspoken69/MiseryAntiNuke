@@ -27,6 +27,41 @@ antinuke.on("ready", async () => {
   console.log("———————————————————————————————————————————————")
 })
 
+// Prefix Callback
+antinuke.on('message', async msg => {
+  if (msg.content === 'm!'){
+
+
+  const prefixbed = new Discord.MessageEmbed()
+  .setDescription('Need help? Do `m!help` for commands.')
+  .setTimestamp()
+  .setColor(000000)
+  .setImage('https://media.discordapp.net/attachments/790266937808257074/813239849708027944/image2.gif')
+  .setFooter('Follow my GitHub! @Misspoken69')
+  msg.channel.send(prefixbed)
+  .then(sentMessage => sentMessage.react('822307172229840926'))
+  .catch(console.error)
+  }
+})
+
+// Mention Callback | RECODED!
+antinuke.on('message', async msg => {
+  if (msg.mentions.has(antinuke.user, { ignoreRoles: false, ignoreEveryone: false }) && !msg.content.startsWith(prefix)) {
+    
+
+
+    const mbed = new Discord.MessageEmbed()
+    .setDescription('Need help? Do `m!help` for commands.')
+    .setTimestamp()
+    .setColor(000000)
+    .setImage('https://media.discordapp.net/attachments/790266937808257074/813239849708027944/image2.gif')
+    .setFooter('Follow my GitHub! @Misspoken69')
+    msg.channel.send(mbed)
+    .then(sentMessage => sentMessage.react('822307172229840926'))
+    .catch(console.error)
+  }
+})
+
 // Source Command | RECODED!
 antinuke.on('message', async msg => {
   if (msg.content === prefix + 'invite'){
