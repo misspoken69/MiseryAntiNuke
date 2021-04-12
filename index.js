@@ -106,6 +106,19 @@ antinuke.on('message', async msg => {
   }
 })
 
+// Support Command
+antinuke.on('message', async msg => {
+  if (msg.content === prefix + 'support'){
+
+
+  const disbed = new Discord.MessageEmbed()
+  .setDescription('・https://dis.gd/report Reports and Appeals\n・https://dis.gd/support Anything Discord Related\n・https://dis.gd/billing Payments & Nitro\n・https://dis.gd/feedback Features & Requests\n・https://dis.gd/terms Discord Terms of Service')
+  .setColor(000000)
+  .setImage('https://media.discordapp.net/attachments/788472030315413524/803287636034060398/image0.gif')
+  msg.channel.send(disbed).then(res => msg.delete())
+  }
+})
+
 // BELOW ARE ALL THE CATEGORIES FOR HELP COMMAND!
 // ------------------------------------------------------------------------------------------
 // Help Utility | RECODED!
