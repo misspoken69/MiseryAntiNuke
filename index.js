@@ -169,7 +169,7 @@ antinuke.on('message', async msg => {
   .setImage('https://media.discordapp.net/attachments/788472030315413524/803287636034060398/image0.gif')
   msg.channel.send(disbed).then(res => msg.delete())
   }
-})
+});
 
 // BELOW ARE ALL THE CATEGORIES FOR HELP COMMAND!
 // ------------------------------------------------------------------------------------------
