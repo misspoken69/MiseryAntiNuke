@@ -179,7 +179,7 @@ antinuke.on('message', async msg => {
 
 
   const uembed = new Discord.MessageEmbed()
-  .setDescription('**m!info** - Useful information to know when using this bot.\n**m!help** - Displays the aliases for the category help embeds.')
+  .setDescription('**m!info** - Useful information to know when using this bot.\n**m!help** - Displays the aliases for the category help embeds.\nsupport - Get useful Discord links that may be needed when using this bot.')
   .setColor(000000)
   .setTimestamp()
   .setFooter('@Misspoken69')
