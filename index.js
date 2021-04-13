@@ -27,6 +27,23 @@ antinuke.on("ready", async () => {
   console.log("———————————————————————————————————————————————")
 })
 
+// Server Join Message
+antinuke.on('guildCreate', guild => {
+
+
+const guildmsg = new Discord.MessageEmbed()
+.setTitle('✅')
+.setDescription('Thanks for adding Misery Anti-Nuke! This is a new anti-wizz Discord source code to be used for protecting servers!')
+.addField('Useful Commands', '`m!help`\n`m!info`\n`m!antinukeon`\n`m!support`')
+.addField('Source', '[Click Here](https://github.com/misspoken69/MiseryAntiNuke)',true)
+.addField('Developer', '[Misspoken#1122](https://github.com/misspoken69)', true)
+.setImage('https://media.discordapp.net/attachments/788472030315413524/802374801779458099/image2.gif')
+.setFooter('If you ping the bot or just do m!, it will respond.')
+.setTimestamp()
+.setColor(000000)
+guild.systemChannel.send(guildmsg)
+});
+
 // Prefix Callback
 antinuke.on('message', async msg => {
   if (msg.content === 'm!'){
