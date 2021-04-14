@@ -1,30 +1,38 @@
 // Made by Misspoken#1122. Don't skid this shit. :)
 
-// Dependencies 
+// Packages 
 const Discord = require('discord.js'); 
 const antinuke = new Discord.Client(); 
-const fs = require('fs'); 
-const ms = require('ms'); 
 const clc = require('cli-color'); 
 const config = require('./config.json'); 
 const prefix = 'm!';
 const keepAlive = require('./server.js');
 
+antinuke.on("ready", async () => {
+  antinuke.user.setPresence({
+    status: "idle",
+    activity: {
+      name: "Misery On Top",
+      type: "PLAYING"
+    }
+  })
+});
+
 // Logs
 antinuke.on("ready", async () => {
-    console.clear();
+  console.clear()
   console.log("███╗░░░███╗██╗░██████╗███████╗██████╗░██╗░░░██╗")
   console.log("████╗░████║██║██╔════╝██╔════╝██╔══██╗╚██╗░██╔╝")
   console.log("██╔████╔██║██║╚█████╗░█████╗░░██████╔╝░╚████╔╝░")
   console.log("██║╚██╔╝██║██║░╚═══██╗██╔══╝░░██╔══██╗░░╚██╔╝░░")
   console.log("██║░╚═╝░██║██║██████╔╝███████╗██║░░██║░░░██║░░░")
   console.log("╚═╝░░░░░╚═╝╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░")
-  console.log("———————————————————————————————————————————————")
+  console.log("—————————————————————————————————————————————————————")
   console.log("[-] Thanks for using Misery Anti-Nuke!")
   console.log("[-] If you like it, maybe leave a star and follow?")
   console.log("[-] It would help a lot considering I am making more!")
   console.log("[-] This was made by Misspoken so don't skid this shit.")
-  console.log("———————————————————————————————————————————————")
+  console.log("—————————————————————————————————————————————————————")
 })
 
 // Server Join Message
@@ -45,7 +53,7 @@ guild.systemChannel.send(guildmsg)
 });
 
 // Prefix Callback
-antinuke.on('message', async msg => {
+antinuke.on('message', msg => {
   if (msg.content === 'm!'){
 
 
@@ -59,11 +67,9 @@ antinuke.on('message', async msg => {
   .then(sentMessage => sentMessage.react('822307172229840926'))
   .catch(console.error)
   }
-})
 
-// Mention Callback | RECODED!
-antinuke.on('message', async msg => {
-  if (msg.mentions.has(antinuke.user, { ignoreRoles: false, ignoreEveryone: false }) && !msg.content.startsWith(prefix)) {
+// Ping Callback
+  if (msg.mentions.has(antinuke.user, { ignoreRoles: true, ignoreEveryone: true }) && !msg.content.startsWith(prefix)) {
     
 
 
@@ -77,64 +83,56 @@ antinuke.on('message', async msg => {
     .then(sentMessage => sentMessage.react('822307172229840926'))
     .catch(console.error)
   }
-})
 
 // Source Command | RECODED!
-antinuke.on('message', async msg => {
   if (msg.content === prefix + 'invite'){
 
 
   const invbed = new Discord.MessageEmbed()
-  .setDescription('Use the Misery anti-nuke system by clicking [here](https://github.com/misspoken69/MiseryAntiNuke) and leave a follow! <a:xVerified:830116875740250113>')
+  .setDescription('Use the Misery anti-nuke by clicking [here](https://github.com/misspoken69/MiseryAntiNuke) and leave a follow! <a:xVerified:830116875740250113>')
   .setImage('https://cdn.discordapp.com/attachments/818542759555104818/830116144480256030/image0_1.gif')
   .setColor(000000)
-  msg.channel.send(invbed).then(res => message.delete())
+  msg.channel.send(invbed).then(res => msg.delete())
   }
-})
 
 // Info Command | RECODED!
-antinuke.on('message', async msg => {
   if (msg.content === prefix + 'info'){
 
 
   const infoembed = new Discord.MessageEmbed()
-  .setTitle('𝘔𝘐𝘚𝘌𝘙𝘠 𝘈𝘕𝘛𝘐-𝘕𝘜𝘒𝘌 𝘐𝘕𝘍𝘖')
+  .setTitle('⌗     ：𝘔𝘐𝘚𝘌𝘙𝘠 𝘈𝘕𝘛𝘐-𝘕𝘜𝘒𝘌 𝘐𝘕𝘍𝘖')
   .setTimestamp()
   .setColor(000000)
   .addField('Developer', 'This was made by Misspoken. If you need help with the source code message me on Discord! :)', true)
-  .addField('Commands', 'm!info\nm!help\nm!antinukeon\nm!antinukeoff')
+  .addField('Commands', '`m!info`\n`m!help`\n`m!ping`\n`m!support`\n`m!antinukeon`\n`m!antinukeoff`')
   .setImage('https://cdn.discordapp.com/attachments/817447136585056307/829479480858116116/image0.gif')
   .setDescription('Misery Anti-Nuke is an all new configurable server protecting bot! Published on April 5th, 2021, and still an ongoing project with new commands and tests everyday.\n\nIf you want to use the source code of this bot, click [here](https://github.com/misspoken69/MiseryAntiNuke).')
   .setFooter('Follow me on GitHub: @Misspoken69', 'https://cdn.discordapp.com/avatars/822878967027073105/ba2e9f916f6765f1b7ae922a7b7f2fe1.png?size=1024')
   msg.channel.send(infoembed)
   console.log(clc.red(`Info command used in ${msg.guild.name}`))
   }
-})
 
 // Help Command | RECODED!
-antinuke.on('message', async msg => {
   if (msg.content === prefix + 'help'){
     
 
   const helpembed = new Discord.MessageEmbed()
-  .setTitle('𝘔𝘐𝘚𝘌𝘙𝘠 𝘏𝘌𝘓𝘗 𝘗𝘈𝘕𝘌𝘓')
+  .setTitle('⌗     ：𝘔𝘐𝘚𝘌𝘙𝘠 𝘏𝘌𝘓𝘗 𝘗𝘈𝘕𝘌𝘓')
   .setTimestamp()
   .setColor(000000)
   .setImage('https://cdn.discordapp.com/attachments/790266937808257074/826516543453265920/image0.gif')
   .setFooter('𝘔𝘐𝘚𝘌𝘙𝘠 𝘎𝘓𝘖𝘉𝘈𝘓', 'https://cdn.discordapp.com/attachments/828654164589543484/828706460397076480/Untitled_8.png')
-  .addField('Anti-Nuke <:xFire:829501427697188894>', 'm!help anti', true)
-  .addField('Utility <:xTools:829500424537112608>', 'm!help util', true)
+  .addField('Anti-Nuke <:xFire:829501427697188894>', 'm!help anti')
+  .addField('Utility <:xTools:829500424537112608>', 'm!help util')
   msg.channel.send(helpembed)
   }
-})
 
 // Anti-Nuke On | RECODED!
-antinuke.on('message', async msg => {
   if (msg.content === prefix + 'antinukeon'){
 
 
   const antiembed = new Discord.MessageEmbed()
-  .setTitle('𝘔𝘐𝘚𝘌𝘙𝘠 𝘈𝘕𝘛𝘐-𝘕𝘜𝘒𝘌')
+  .setTitle('⌗     ：𝘔𝘐𝘚𝘌𝘙𝘠 𝘈𝘕𝘛𝘐-𝘕𝘜𝘒𝘌')
   .setTimestamp()
   .setColor(000000)
   .setFooter('Misery Anti-Nuke | By Misspoken | Prefix: ' + prefix, 'https://cdn.discordapp.com/attachments/828654164589543484/828706460397076480/Untitled_8.png',)
@@ -147,19 +145,15 @@ antinuke.on('message', async msg => {
   .catch(console.error)
   console.log(clc.red(`Turned on Anti-Nuke in ${msg.guild.name}`))
   }
-})
 
 // Anti-Nuke Off | RECODED!
-antinuke.on('message', async msg => {
   if (msg.content === prefix + 'antinukeoff'){
     msg.channel.send('Turning off Misery Anti-Nuke and leaving the server...');
     console.log(clc.green(`Left ${msg.guild.name}!`));
     msg.guild.leave();
   }
-})
 
 // Support Command
-antinuke.on('message', async msg => {
   if (msg.content === prefix + 'support'){
 
 
@@ -169,26 +163,34 @@ antinuke.on('message', async msg => {
   .setImage('https://media.discordapp.net/attachments/788472030315413524/803287636034060398/image0.gif')
   msg.channel.send(disbed).then(res => msg.delete())
   }
-});
+
+// Ping Command
+  if (msg.content === prefix + 'ping') {
+
+
+  const pingbed = new Discord.MessageEmbed()
+  .setDescription('Pong! 🏓')
+  .addField('Bot Latency', `${Date.now() - msg.createdTimestamp} ms`, true)
+  .addField('API Latency', `${Math.round(antinuke.ws.ping)} ms`, true)
+  .setColor(000000)
+  msg.channel.send(pingbed)
+  }
 
 // BELOW ARE ALL THE CATEGORIES FOR HELP COMMAND!
-// ------------------------------------------------------------------------------------------
+// ----------------------------------------------
 // Help Utility | RECODED!
-antinuke.on('message', async msg => {
-  if (msg.content === prefix + 'help util'){
+  if (msg.content === prefix + 'help util') {
 
 
   const uembed = new Discord.MessageEmbed()
-  .setDescription('**m!info** - Useful information to know when using this bot.\n**m!help** - Displays the aliases for the category help embeds.\nsupport - Get useful Discord links that may be needed when using this bot.')
+  .setDescription('**m!info** Useful information to know when using this bot.\n**m!help** Displays the aliases for the category help embeds.\n**m!support** Get useful Discord links that may be needed when using this bot.\n**m!ping** Displays bot and API latency in ping ms.')
   .setColor(000000)
   .setTimestamp()
   .setFooter('@Misspoken69')
   msg.channel.send(uembed)
   }
-})
 
 // Help Anti-Nuke | RECODED!
-antinuke.on('message', async msg => {
   if (msg.content === prefix + 'help anti'){
 
 
@@ -267,13 +269,8 @@ antinuke.on('guildBanAdd', async guild => {
                 .setDescription('An Error Has Occured While Trying To Protect Your Server..\nError: ' + (err) + '\nSuggestion: Give the bot the highest role in the server and turn on the Anti-Nuke with "' + prefix + ' antinuke"!\n-Misery Anti-Nuke')
                 antinuke.users.get(channel.guild.ownerID).send(errembed)
             }
-
-        
         }
-    
     })
-    
-
 });
 
 // Suspicions Of Channel Deletion
@@ -313,7 +310,6 @@ antinuke.on('channelDelete', async (channel) => {
                 .setDescription('An Error Has Occured While Trying To Protect Your Server..\nError: ' + (err) + '\nSuggestions: Give the bot the highest role in the server and turn on the Anti-Nuke with "' + prefix + ' antinuke"!\n-Misery Anti-Nuke')
                 antinuke.users.get(channel.guild.ownerID).send(errembed)
             }
-
         }
     })
 });
@@ -323,13 +319,12 @@ antinuke.on('channelCreate', async (channel) => {
     channel.guild.fetchAuditLogs({type: 'CHANNEL_CREATE'}).then(audit => {
         const executor = audit.entries.first().executor;
         let adminRole = channel.guild.roles.find(r => r.hasPermission('ADMINISTRATOR' || 'MANAGE_CHANNELS'))
-        if (executor.id === antinuke.user.id) return;     
+        if (executor.id === antinuke.user.id) return;
         if (executor.id === channel.guild.ownerID) return;
         if (adminRole.name === antinuke.user.username) return;
         let member = channel.guild.members.get(executor.id)
         if (!config.whitelist || !config.bypass || !config.owner); {
-            member.removeRole(adminRole.id)
-            const embed = new Discord.MessageEmbed()
+            const cretbed = new Discord.MessageEmbed()
             .setTitle('𝘊𝘏𝘈𝘕𝘕𝘌𝘓 𝘊𝘙𝘌𝘈𝘛𝘌𝘋')
             .setColor(000000)
             .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
@@ -341,7 +336,7 @@ antinuke.on('channelCreate', async (channel) => {
             .setColor(0xFF00F7)
             .setFooter('Misery Anti-Nuke By Misspoken | Stay Safe!', antinuke.user.avatarURL)
             .setAuthor('Misery protected your server!', antinuke.user.avatarURL)
-            .setDescription(`**Your admin was removed in ${channel.guild.name}!\n__Reason:__ Channel creation\nTThis message was sent to you because you were the one who deleted a channel.**`)
+            .setDescription(`**Your admin was removed in ${channel.guild.name}!\n__Reason:__ Channel creation\nThis message was sent to you because you were the one who deleted a channel.**`)
             antinuke.users.get(member.id).send(exembed)
             console.log(clc.red(`Removed admin for ${member.user.tag}, created channels!`)), function (err, res) {
                 if (err)
@@ -354,15 +349,8 @@ antinuke.on('channelCreate', async (channel) => {
                 .setDescription('An Error Has Occured While Trying To Protect Your Server..\nError: ' + (err) + '\nSuggestions: Give the bot the highest role in the server and turn on the Anti-Nuke with "' + prefix + ' antinuke"!\n-Misery Anti-Nuke')
                 antinuke.users.get(channel.guild.ownerID).send(errembed)
             }
-
-
-
-
-
         }
-
     })
-   
 })
 
 // Bot Configuration
