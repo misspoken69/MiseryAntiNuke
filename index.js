@@ -193,7 +193,7 @@ antinuke.on('message', msg => {
 
 
   const uembed = new Discord.MessageEmbed()
-  .setDescription('**m!info** Useful information to know when using this bot.\n**m!help** Displays the aliases for the category help embeds.\n**m!support** Get useful Discord links that may be needed when using this bot.\n**m!ping** Displays bot and API latency in ping ms.')
+  .setDescription('**m!info** Useful information to know when using this bot.\n**m!help** Displays the aliases for the category help embeds.\n**m!support** Get useful Discord links that may be needed when using this bot.\n**m!ping** Displays bot and API latency in ping ms.\n**m!uptime** Shows the current uptime of Misery Anti-Nuke.')
   .setColor(000000)
   .setTimestamp()
   .setFooter('@Misspoken69')
