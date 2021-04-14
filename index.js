@@ -4,6 +4,7 @@
 const Discord = require('discord.js'); 
 const antinuke = new Discord.Client(); 
 const clc = require('cli-color'); 
+const pretty = require('pretty-ms');
 const config = require('./config.json'); 
 const prefix = 'm!';
 const keepAlive = require('./server.js');
