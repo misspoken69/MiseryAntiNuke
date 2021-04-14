@@ -203,6 +203,8 @@ antinuke.on('message', msg => {
   }
 })
 
+// BELOW ARE ALL THE ANTI-NUKE FEATURES!
+// ----------------------------------------------
 // Suspicions For Adding Bots
 antinuke.on('guildMemberAdd', async member => {
     const executor = audit.entries.first().executor;
