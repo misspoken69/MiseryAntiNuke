@@ -186,6 +186,19 @@ antinuke.on('message', msg => {
   .setColor(000000)
   msg.channel.send(upbed)
   }
+  
+// Releases Command
+  if (msg.content === prefix + 'releases') {
+
+
+  const relbed = new Discord.MessageEmbed()
+  .setDescription('```  ┏━┓┏━┳━━┳━━━┳━━━┳━━━┳┓╋╋┏┓\n  ┃┃┗┛┃┣┫┣┫┏━┓┃┏━━┫┏━┓┃┗┓┏┛┃\n  ┃┏┓┏┓┃┃┃┃┗━━┫┗━━┫┗━┛┣┓┗┛┏┛\n  ┃┃┃┃┃┃┃┃┗━━┓┃┏━━┫┏┓┏┛┗┓┏┛\n  ┃┃┃┃┃┣┫┣┫┗━┛┃┗━━┫┃┃┗┓╋┃┃\n  ┗┛┗┛┗┻━━┻━━━┻━━━┻┛┗━┛╋┗┛```')
+  .addField('Releases', 'No new releases yet.', true)
+  .addField('Version', 'Current version is `1.0.2`.', true)
+  .setImage('https://cdn.discordapp.com/attachments/817447136585056307/832032899640983612/polo.gif')
+  .setColor(000000)
+  msg.channel.send(relbed)
+  }
 
 // BELOW ARE ALL THE CATEGORIES FOR HELP COMMAND!
 // ----------------------------------------------
@@ -194,7 +207,7 @@ antinuke.on('message', msg => {
 
 
   const uembed = new Discord.MessageEmbed()
-  .setDescription('**m!info** Useful information to know when using this bot.\n**m!help** Displays the aliases for the category help embeds.\n**m!support** Get useful Discord links that may be needed when using this bot.\n**m!ping** Displays bot and API latency in ping ms.\n**m!uptime** Shows the current uptime of Misery Anti-Nuke.')
+  .setDescription('**m!info** Useful information to know when using this bot.\n**m!help** Displays the aliases for the category help embeds.\n**m!support** Get useful Discord links that may be needed when using this bot.\n**m!ping** Displays bot and API latency in ping ms.\n**m!uptime** Shows the current uptime of Misery Anti-Nuke.\n**m!releases** When a new release is published, it will show name and info of it.')
   .setColor(000000)
   .setTimestamp()
   .setFooter('@Misspoken69')
