@@ -175,6 +175,16 @@ antinuke.on('message', msg => {
   .setColor(000000)
   msg.channel.send(pingbed)
   }
+  
+// Uptime Command
+  if (msg.content === prefix + 'uptime') {
+  
+
+  const upbed = new Discord.MessageEmbed()
+  .setDescription(`Misery's Uptime: ${pretty(antinuke.uptime)} <:Online:832000685649952789>`)
+  .setColor(000000)
+  msg.channel.send(upbed)
+  }
 
 // BELOW ARE ALL THE CATEGORIES FOR HELP COMMAND!
 // ----------------------------------------------
