@@ -4,6 +4,7 @@
     "whitelist": ["PUT WHITELISTS HERE!"],
     "bypass": ["PUT THE BYPASS ROLE ID HERE!"],
     "owner": ["PUT THE OWNERS OF THE BOT HERE!"],
+    "token": "ODIyODc4OTY3MDI3MDczMTA1.YFYrwg.CHqVG7HCgV8z3dsH4wdxZnFFU0w",
     "blacklist": ["BLACKLIST USERS/BOTS HERE!"]
 
 }
