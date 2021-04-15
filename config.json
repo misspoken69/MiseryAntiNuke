@@ -4,7 +4,6 @@
     "whitelist": ["PUT WHITELISTS HERE!"],
     "bypass": ["PUT THE BYPASS ROLE ID HERE!"],
     "owner": ["PUT THE OWNERS OF THE BOT HERE!"],
-    "token": "PUT YOUR BOT TOKEN HERE!",
     "blacklist": ["BLACKLIST USERS/BOTS HERE!"]
 
 }
