@@ -381,4 +381,4 @@ antinuke.on('channelCreate', async (channel) => {
 
 // Bot Configuration
 keepAlive();
-antinuke.login(process.env.TOKEN);
+antinuke.login(config.token);
