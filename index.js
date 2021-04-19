@@ -40,21 +40,33 @@ antinuke.on("ready", async () => {
 antinuke.on('guildCreate', guild => {
 
 
-const guildmsg = new Discord.MessageEmbed()
-.setTitle('✅')
-.setDescription('Thanks for adding Misery Anti-Nuke! This is a new anti-wizz Discord source code to be used for protecting servers!')
-.addField('Useful Commands', '`m!help`\n`m!info`\n`m!antinukeon`\n`m!support`')
-.addField('Source', '[Click Here](https://github.com/misspoken69/MiseryAntiNuke)',true)
-.addField('Developer', '[Misspoken#1122](https://github.com/misspoken69)', true)
-.setImage('https://media.discordapp.net/attachments/788472030315413524/802374801779458099/image2.gif')
-.setFooter('If you ping the bot or just do m!, it will respond.')
-.setTimestamp()
-.setColor(000000)
-guild.systemChannel.send(guildmsg)
-});
+  const guildmsg1 = new Discord.MessageEmbed()
+  .setTitle('⌗     ：𝘔𝘐𝘚𝘌𝘙𝘠 𝘈𝘕𝘛𝘐-𝘕𝘜𝘒𝘌 𝘍𝘌𝘈𝘛𝘜𝘙𝘌𝘚')
+  .setDescription('People that are not whitelisted in `config.json` will be against if they do any of the following.')
+  .addField('Channels', '> Creation - Bans the member and deletes the channel.\n> Deletion - Bans the member and restores the channel.')
+  .addField('Roles', '> Creation - Bans the member and deletes the role.\n> Deletion - Bans the member and restores the role.\n> Update - Bans the member and resets the role.')
+  .addField('Bots', '> Add Bot - Bans the member and bot that was added.\n> Bans Bot(s) - Bans the member and unbans the bots.')
+  .addField('Members', '> Ban Member - Bans the executor and unbans member.\n> Unban Member - Bans the executor and bans member.')
+  .setImage('https://media.discordapp.net/attachments/788472030315413524/802374801779458099/image2.gif')
+  .setColor(000000)
+  guild.systemChannel.send(guildmsg1)
+  });
+  
+  antinuke.on('guildCreate', guild => {
+  
+  
+  const guildmsg = new Discord.MessageEmbed()
+  .setDescription('Thanks for adding Misery Anti-Nuke! This is a new anti-wizz Discord source code to be used for protecting servers!')
+  .addField('Useful Commands', '`m!help`\n`m!info`\n`m!antinukeon`\n`m!support`')
+  .addField('Links', '[Donate](https://www.paypal.com/paypalme/misspoken69)・[Source](https://github.com/misspoken69/MiseryAntiNuke)・[Developer](https://github.com/misspoken69)')
+  .setFooter('If you ping the bot or just do m!, it will respond.')
+  .setTimestamp()
+  .setColor(000000)
+  guild.systemChannel.send(guildmsg)
+  });
 
 // Prefix Callback
-antinuke.on('message', msg => {
+antinuke.on('message', async msg => {
   if (msg.content === 'm!'){
 
 
@@ -123,8 +135,8 @@ if (msg.content === prefix + 'info'){
   .setColor(000000)
   .setImage('https://cdn.discordapp.com/attachments/790266937808257074/826516543453265920/image0.gif')
   .setFooter('𝘔𝘐𝘚𝘌𝘙𝘠 𝘎𝘓𝘖𝘉𝘈𝘓', 'https://cdn.discordapp.com/attachments/828654164589543484/828706460397076480/Untitled_8.png')
-  .addField('Anti-Nuke <:xFire:829501427697188894>', 'm!help anti')
-  .addField('Utility <:xTools:829500424537112608>', 'm!help util')
+  .addField('Anti-Nuke <:xFire:829501427697188894>', '`antinukeon` `antinukeoff`')
+  .addField('Utility <:xTools:829500424537112608>', '`info` `help` `support` `ping` `uptime` `releases` `features` `membercount` `nuke`')
   msg.channel.send(helpembed)
   }
 
@@ -186,7 +198,7 @@ if (msg.content === prefix + 'info'){
   .setColor(000000)
   msg.channel.send(upbed)
   }
-  
+
 // Releases Command
   if (msg.content === prefix + 'releases') {
 
@@ -200,6 +212,43 @@ if (msg.content === prefix + 'info'){
   msg.channel.send(relbed)
   }
 
+// Features Command
+  if (msg.content === prefix + 'features') {
+  
+  const febed = new Discord.MessageEmbed()
+  .setTitle('⌗     ：𝘔𝘐𝘚𝘌𝘙𝘠 𝘈𝘕𝘛𝘐-𝘕𝘜𝘒𝘌 𝘍𝘌𝘈𝘛𝘜𝘙𝘌𝘚')
+  .setDescription('People that are not whitelisted in `config.json` will be against if they do any of the following.')
+  .addField('Channels', '> Creation - Bans the member and deletes the channel.\n> Deletion - Bans the member and restores the channel.')
+  .addField('Roles', '> Creation - Bans the member and deletes the role.\n> Deletion - Bans the member and restores the role.\n> Update - Bans the member and resets the role.')
+  .addField('Bots', '> Add Bot - Bans the member and bot that was added.\n> Bans Bot(s) - Bans the member and unbans the bots.')
+  .addField('Members', '> Ban Member - Bans the executor and unbans member.\n> Unban Member - Bans the executor and bans member.')
+  .setImage('https://media.discordapp.net/attachments/788472030315413524/802374801779458099/image2.gif')
+  .setColor(000000)
+  msg.channel.send(febed)
+  }
+
+// MemberCount Command
+  if (msg.content === prefix + 'membercount') {
+
+
+  const membed = new Discord.MessageEmbed()
+  .setTitle(`Members`)
+  .setDescription(`${msg.guild.memberCount}`)
+  .setColor(000000)
+  .setTimestamp()
+  msg.channel.send(membed)
+  }
+
+// Nuke Command
+  if (msg.content === prefix + "nuke") {
+  
+  
+  const position = msg.channel.position
+  const channel = await msg.channel.clone();
+  msg.channel.delete();
+  channel.setPosition(position)
+  }
+
 // BELOW ARE ALL THE CATEGORIES FOR HELP COMMAND!
 // ----------------------------------------------
 // Help Utility | RECODED!
@@ -207,7 +256,7 @@ if (msg.content === prefix + 'info'){
 
 
   const uembed = new Discord.MessageEmbed()
-  .setDescription('**m!info** Useful information to know when using this bot.\n**m!help** Displays the aliases for the category help embeds.\n**m!support** Get useful Discord links that may be needed when using this bot.\n**m!ping** Displays bot and API latency in ping ms.\n**m!uptime** Shows the current uptime of Misery Anti-Nuke.\n**m!releases** When a new release is published, it will show name and info of it.')
+  .setDescription('**m!info** Useful information to know when using this bot.\n**m!help** Displays the aliases for the category help embeds.\n**m!support** Get useful Discord links that may be needed when using this bot.\n**m!ping** Displays bot and API latency in ping ms.\n**m!uptime** Shows the current uptime of Misery Anti-Nuke.\n**m!releases** When a new release is published, it will show name and info of it.\n**m!features** Displays the anti-nuke features built into the bot.\n**m!membercount** Replies back with the amount of members in the server.\n**m!nuke** Nuke or purge a channel. Useful for clearing up the whole chat.')
   .setColor(000000)
   .setTimestamp()
   .setFooter('@Misspoken69')
